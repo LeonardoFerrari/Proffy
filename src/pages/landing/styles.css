@@ -113,12 +113,12 @@
     }
 
     .logo-container h2 {
-        text-align: inital;
+        text-align: initial;
         font-size: 3.6rem;
     }
 
     .logo-container img {
-        height: 100px
+        height: 100%;
     }
 
     .hero-image {
