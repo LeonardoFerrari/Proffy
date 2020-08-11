@@ -8,6 +8,7 @@ import './styles.css'
 
 interface PageHeaderProps {
     title: string;
+    description?: string;
 }
 
 // <--  Componente escrito em formato de função, recebendo um parâmetro chamado de 'Generic' -->
@@ -23,7 +24,8 @@ const PageHeader: React.FunctionComponent<PageHeaderProps> = (props) => {
                 </div>
                 <div className="header-content">
                     <strong>{props.title}</strong>
-
+                    { props.description && <p>{props.description}</p> }
+                    
                     {props.children}
                 </div>
             </header>

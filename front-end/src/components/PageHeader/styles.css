@@ -44,6 +44,13 @@
     line-height: 4.2rem;
     color: var(--color-title-in-primary);
 }
+.page-header .header-content p {
+    max-width: 30rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: var(--color-text-in-primary);
+    margin-top: 2.4rem;
+}
 
 #page-teacher-list main {
     margin: 3.2rem auto;
@@ -71,7 +78,7 @@
         align-items: flex-start;
     }
     .page-header .header-content strong {
-        max-width: 350px;
+        max-width: 450px;
     }
 
     #page-teacher-list main {

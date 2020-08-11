@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logoImg from '../../assets/images/logo.svg'
 import { Link } from 'react-router-dom';
 
@@ -10,8 +10,21 @@ import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
 import {    } from 'react-router-dom'
 
 import './styles.css';
+import api from '../../services/api';
 
 function Landing(){
+
+    const [totalConnections, setTotalConnections] = useState(0);
+
+    // O segundo parâmetro é um Array que quando as informações forem alteradas ele dispara a primeira função 
+    useEffect(() => {
+        api.get('/connections').then(response => {
+            const { total } = response.data;
+
+            setTotalConnections(total);
+        })
+    }, [])
+
     return (
         <div id="page-landing">
             <div id="page-landing-content" className="container">
@@ -35,7 +48,7 @@ function Landing(){
                     Dar aula
                 </Link>
                 </div>
-                <span className="total-connetions">Total de 1000 conexões já realizadas <img src={purpleHeartIcon} alt="Coração roxo"/></span>
+                <span className="total-connetions">Total de {totalConnections} conexões já realizadas <img src={purpleHeartIcon} alt="Coração roxo"/></span>
             </div>
         </div>    
     
